@@ -55,6 +55,14 @@ static PHMenuDelegate* menuDelegate;
 
 static int show_closureref;
 
+static NSImage* menu_icon(NSString* icon_name) {
+    NSImage* img = [NSImage imageNamed:icon_name];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [img setTemplate:YES];
+    });
+    return img;
+}
 
 /// hydra.menu.show(fn() -> itemstable)
 /// Shows Hyra's menubar icon. The function should return a table of tables with keys: title, fn, checked (optional), disabled (optional)
@@ -63,15 +71,9 @@ static int menu_show(lua_State* L) {
         luaL_checktype(L, 1, LUA_TFUNCTION);
         show_closureref = luaL_ref(L, LUA_REGISTRYINDEX);
         
-        NSImage* img = [NSImage imageNamed:@"menu"];
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            [img setTemplate:YES];
-        });
-        
         statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
         [statusItem setHighlightMode:YES];
-        [statusItem setImage:img];
+        [statusItem setImage:menu_icon(@"menu")];
         
         NSMenu* menu = [[NSMenu alloc] init];
         
@@ -171,9 +173,30 @@ static int menu_hide(lua_State* L) {
     return 0;
 }
 
+/// hydra.menu.highlight()
+/// Swaps the menubar icon to indicate that Hydra is "active"
+/// (for example, because a modal key has been pressed.)
+static int menu_highlight() {
+    if (statusItem) {
+        [statusItem setImage:menu_icon(@"menu_highlight")];
+    }
+    return 0;
+}
+
+/// hydra.menu.unhighlight()
+/// Reverts the menubar icon to its normal state.
+static int menu_unhighlight() {
+    if (statusItem) {
+        [statusItem setImage:menu_icon(@"menu")];
+    }
+    return 0;
+}
+
 static const luaL_Reg menulib[] = {
     {"show", menu_show},
     {"hide", menu_hide},
+    {"highlight", menu_highlight},
+    {"unhighlight", menu_unhighlight},
     {NULL, NULL}
 };
 

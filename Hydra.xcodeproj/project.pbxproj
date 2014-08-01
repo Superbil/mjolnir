@@ -115,6 +115,8 @@
 		94E8E7BC194E25300064CF6C /* application.lua in Resources */ = {isa = PBXBuildFile; fileRef = 94E8E7BB194E25300064CF6C /* application.lua */; };
 		94F7A98E1959096100CE7136 /* notify.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F7A98D1959096100CE7136 /* notify.m */; };
 		94FF83D61970DAD4005B47D7 /* eventtap.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FF83D51970DAD4005B47D7 /* eventtap.m */; };
+		FF09E52A198604D900A2E586 /* menu_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF09E528198604D900A2E586 /* menu_highlight@2x.png */; };
+		FF09E52B198604D900A2E586 /* menu_highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = FF09E529198604D900A2E586 /* menu_highlight.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -265,6 +267,8 @@
 		94EF97711958603F00096A41 /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
 		94F7A98D1959096100CE7136 /* notify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notify.m; sourceTree = "<group>"; };
 		94FF83D51970DAD4005B47D7 /* eventtap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventtap.m; sourceTree = "<group>"; };
+		FF09E528198604D900A2E586 /* menu_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_highlight@2x.png"; sourceTree = "<group>"; };
+		FF09E529198604D900A2E586 /* menu_highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_highlight.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -511,6 +515,8 @@
 				9452129D194D65BF00217584 /* PHAlert.m */,
 				9452129F194D697100217584 /* alert.xib */,
 				945212A5194D6B5900217584 /* menu.png */,
+				FF09E528198604D900A2E586 /* menu_highlight@2x.png */,
+				FF09E529198604D900A2E586 /* menu_highlight.png */,
 				945212A6194D6B5900217584 /* menu@2x.png */,
 				94804B08197B3E0D005DE830 /* CGSPrivate.h */,
 				94D8B5E31980819A003CB313 /* HydraLicense.h */,
@@ -583,9 +589,11 @@
 				94E8E7AE194E0C940064CF6C /* Hydra.icns in Resources */,
 				94D86A7D196E231C001B6F05 /* dsa_pub.cer in Resources */,
 				9480181C1976CDFE0024B39F /* http.lua in Resources */,
+				FF09E52B198604D900A2E586 /* menu_highlight.png in Resources */,
 				945212A0194D697100217584 /* alert.xib in Resources */,
 				944247341972410E0003EAFE /* eventtap.lua in Resources */,
 				94A1537C194D77A400F29F8F /* window.lua in Resources */,
+				FF09E52A198604D900A2E586 /* menu_highlight@2x.png in Resources */,
 				94735C40196DCA9C002A258D /* hydra_ipc.lua in Resources */,
 				942C332E1980DD6000BAE9A7 /* HydraLicenseRequester.xib in Resources */,
 				94517BF91956FA5000F9CCB6 /* textgrid.lua in Resources */,
